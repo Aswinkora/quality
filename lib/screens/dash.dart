@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
+import 'package:quality/screens/duty.dart';
 import 'package:quality/screens/leave.dart';
 
 class Dash extends StatefulWidget {
@@ -16,22 +17,29 @@ class _DashState extends State<Dash> {
       appBar: AppBar(
         backgroundColor: primary,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 7),
+          padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Image.asset("images/midas_logo.png")),
+            backgroundColor: Colors.white,
+            child: Image.asset("images/midas_logo.png"),
+          ),
         ),
         title: const Text(
           "Dashboard",
-          style: TextStyle(color: third),
+          style: TextStyle(
+            color: third,
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.person,
-                color: Colors.white,
-              ))
+            onPressed: () {},
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+              size: 28,
+            ),
+          )
         ],
       ),
       body: Padding(
