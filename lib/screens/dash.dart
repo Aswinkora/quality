@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
-import 'package:quality/screens/duty.dart';
+import 'package:quality/screens/leave.dart';
 import 'package:quality/screens/profile.dart';
 
 class Dash extends StatefulWidget {
@@ -112,10 +112,16 @@ class _DashState extends State<Dash> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Duty()));
-                      },child: _buildDashboardCard('Duty', Icons.work_outline, primary)),
-                      _buildDashboardCard('Leave', Icons.beach_access, primary),
+                      GestureDetector(
+                          child: _buildDashboardCard(
+                              'Duty', Icons.work_outline, primary)),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Leave()));
+                          },
+                          child: _buildDashboardCard(
+                              'Leave', Icons.beach_access, primary)),
                     ],
                   ),
                   SizedBox(height: 20),
