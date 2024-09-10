@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
+import 'package:quality/screens/dash.dart';
 
 class UserLogin extends StatefulWidget {
   const UserLogin({super.key});
@@ -57,7 +58,7 @@ class _UserLoginState extends State<UserLogin> {
                 ],
               ),
             ),
-            ElevatedButton(
+            ElevatedButton(   
                 style: ButtonStyle(
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14))),
@@ -65,7 +66,7 @@ class _UserLoginState extends State<UserLogin> {
                     fixedSize: WidgetStatePropertyAll(
                         Size(MediaQuery.of(context).size.width / 1.2, 40)),
                     backgroundColor: WidgetStatePropertyAll(primary)),
-                onPressed: () {},
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Dash()));},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
