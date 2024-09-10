@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
-import 'package:quality/screens/duty.dart';
-import 'package:quality/screens/profile.dart';
 
-class Dash extends StatefulWidget {
-  const Dash({super.key});
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
-  State<Dash> createState() => _DashState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _DashState extends State<Dash> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,35 +22,24 @@ class _DashState extends State<Dash> {
           ),
         ),
         title: const Text(
-          "Dashboard",
+          "Profile",
           style: TextStyle(
             color: third,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));},
-            icon: const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 28,
-            ),
-          )
-        ],
+     
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22),
-              child: Container(
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
                 padding: const EdgeInsets.all(16),
                 width: MediaQuery.sizeOf(context).width / 1,
-                height: MediaQuery.of(context).size.height / 5,
+                height: 170,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20), color: primary),
                 child: const Column(
@@ -103,52 +90,47 @@ class _DashState extends State<Dash> {
                   ],
                 ),
               ),
-            ),
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 27),
-              child: Column(
+              const SizedBox(
+                height: 45,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Duty()));
-                      },child: _buildDashboardCard('Duty', Icons.work_outline, primary)),
-                      _buildDashboardCard('Leave', Icons.beach_access, primary),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildDashboardCard(
-                          'Salary', Icons.monetization_on_outlined, primary),
-                      _buildDashboardCard(
-                          'Incidence', Icons.warning_amber_rounded, primary),
-                    ],
-                  ),
+                  _buildDutyCard('Personal Details', Icons.person, primary),
+                  _buildDutyCard('Edit Option', Icons.edit, primary),
                 ],
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _buildDutyCard('Reset Password', Icons.lock, primary),
+                  _buildDutyCard('Logout', Icons.logout, primary),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildDashboardCard(String title, IconData icon, Color color) {
+  Widget _buildDutyCard(String title, IconData icon, Color color) {
     return Container(
       height: 180,
-      width: MediaQuery.of(context).size.width / 2.45,
+      width: MediaQuery.of(context).size.width / 2.35,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: color,
+        borderRadius: BorderRadius.circular(20),
+        gradient: LinearGradient(
+          colors: [primary.withOpacity(0.9), primary],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         boxShadow: const [
           BoxShadow(
-            color: Colors.black12,
+            color: Colors.black26,
             offset: Offset(0, 4),
-            blurRadius: 10,
+            blurRadius: 8,
           ),
         ],
       ),
@@ -156,12 +138,12 @@ class _DashState extends State<Dash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 35, color: second),
-            SizedBox(height: 10),
+            Icon(icon, size: 30, color: second),
+            const SizedBox(height: 10),
             Text(
               title,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: third,
               ),
