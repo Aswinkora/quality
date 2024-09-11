@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
 import 'package:quality/screens/duty.dart';
+import 'package:quality/screens/incident.dart';
 import 'package:quality/screens/leave.dart';
 import 'package:quality/screens/profile.dart';
 
@@ -34,7 +35,10 @@ class _DashState extends State<Dash> {
         ),
         actions: [
           IconButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Profile()));
+            },
             icon: const Icon(
               Icons.person,
               color: Colors.white,
@@ -113,9 +117,11 @@ class _DashState extends State<Dash> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Duty()));
-                      },
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Duty()));
+                          },
                           child: _buildDashboardCard(
                               'Duty', Icons.work_outline, primary)),
                       GestureDetector(
@@ -133,8 +139,14 @@ class _DashState extends State<Dash> {
                     children: [
                       _buildDashboardCard(
                           'Salary', Icons.monetization_on_outlined, primary),
-                      _buildDashboardCard(
-                          'Incidence', Icons.warning_amber_rounded, primary),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Incident()));
+                        },
+                        child: _buildDashboardCard(
+                            'Incidence', Icons.warning_amber_rounded, primary),
+                      ),
                     ],
                   ),
                 ],
