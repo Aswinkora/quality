@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
+import 'package:quality/screens/duty.dart';
 import 'package:quality/screens/leave.dart';
 import 'package:quality/screens/profile.dart';
 
@@ -112,7 +113,9 @@ class _DashState extends State<Dash> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
+                      GestureDetector(onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Duty()));
+                      },
                           child: _buildDashboardCard(
                               'Duty', Icons.work_outline, primary)),
                       GestureDetector(

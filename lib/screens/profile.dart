@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quality/const/colors.dart';
+import 'package:quality/screens/editprofile.dart';
+import 'package:quality/screens/login.dart';
+import 'package:quality/screens/personal_details.dart';
+import 'package:quality/screens/resetpassword.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -29,7 +33,6 @@ class _ProfileState extends State<Profile> {
             fontSize: 22,
           ),
         ),
-     
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
@@ -96,16 +99,30 @@ class _ProfileState extends State<Profile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildDutyCard('Personal Details', Icons.person, primary),
-                  _buildDutyCard('Edit Option', Icons.edit, primary),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PersonalDetails()));
+                      },
+                      child: _buildDutyCard(
+                          'Personal Details', Icons.person, primary)),
+                  GestureDetector(onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfile()));
+                  },child: _buildDutyCard('Edit Option', Icons.edit, primary)),
                 ],
               ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildDutyCard('Reset Password', Icons.lock, primary),
-                  _buildDutyCard('Logout', Icons.logout, primary),
+                  GestureDetector(onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Resetpassword()));
+                  },child: _buildDutyCard('Reset Password', Icons.lock, primary)),
+                  GestureDetector(onTap: () {
+                    _showLogoutDialog(context);
+                  },child: _buildDutyCard('Logout', Icons.logout, primary)),
                 ],
               ),
             ],
@@ -151,6 +168,48 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
+    );
+  }
+
+   void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Logout"),
+          content: const Text("Are you sure you want to logout?"),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                "Cancel",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserLogin()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: primary,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                "OK",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

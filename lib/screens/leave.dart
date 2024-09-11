@@ -66,7 +66,7 @@ class _LeaveState extends State<Leave> {
                       children: [
                         Text('TOTAL LEAVES :',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.bold,                     
                                 color: Colors.blue))
                       ],
                     ),
