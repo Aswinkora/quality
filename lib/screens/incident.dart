@@ -14,8 +14,8 @@ class Incident extends StatefulWidget {
 }
 
 class _IncidentState extends State<Incident> {
-  TextEditingController _dateController = TextEditingController();
-  TextEditingController _timeController = TextEditingController();
+ final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
   final List<String> type = [];
   XFile? file;
   final picker = ImagePicker();
@@ -71,8 +71,8 @@ class _IncidentState extends State<Incident> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
+      appBar: AppBar(automaticallyImplyLeading: false,
+        title: const Center(
           child: Text('INCIDENT ',
               style: TextStyle(
                   color: primary, fontSize: 30, fontWeight: FontWeight.w900)),
@@ -81,13 +81,13 @@ class _IncidentState extends State<Incident> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'Location : ',
                       style: TextStyle(
                           color: primary,
@@ -98,27 +98,27 @@ class _IncidentState extends State<Incident> {
                         child: TextFormField(
                       decoration: InputDecoration(
                           prefixIconColor: second,
-                          prefixIcon: Icon(Icons.location_on_outlined),
+                          prefixIcon: const Icon(Icons.location_on_outlined),
                           hintText: 'Location',
-                          hintStyle: TextStyle(color: third),
+                          hintStyle: const TextStyle(color: third),
                           labelText: 'Location',
-                          labelStyle: TextStyle(color: primary),
+                          labelStyle: const TextStyle(color: primary),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(13))),
                     ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
                   children: [
-                    Text('Date :  ',
+                    const Text('Date :  ',
                         style: TextStyle(
                             color: primary,
                             fontSize: 15,
                             fontWeight: FontWeight.w900)),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Expanded(
@@ -126,7 +126,7 @@ class _IncidentState extends State<Incident> {
                         controller: _dateController,
                         decoration: InputDecoration(
                             labelText: 'Select Date',
-                            prefixIcon: Icon(Icons.calendar_today),
+                            prefixIcon: const Icon(Icons.calendar_today),
                             prefixIconColor: second,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(13))),
@@ -136,17 +136,17 @@ class _IncidentState extends State<Incident> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
                   children: [
-                    Text('Time : ',
+                    const Text('Time : ',
                         style: TextStyle(
                             color: primary,
                             fontSize: 15,
                             fontWeight: FontWeight.w900)),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Expanded(
@@ -154,7 +154,7 @@ class _IncidentState extends State<Incident> {
                         controller: _timeController,
                         decoration: InputDecoration(
                             labelText: 'Select Time',
-                            prefixIcon: Icon(Icons.access_time),
+                            prefixIcon: const Icon(Icons.access_time),
                             prefixIconColor: second,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(13))),
@@ -164,24 +164,24 @@ class _IncidentState extends State<Incident> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
                   children: [
-                    Text('Type :',
+                    const Text('Type :',
                         style: TextStyle(
                             color: primary,
                             fontSize: 15,
                             fontWeight: FontWeight.w900)),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Expanded(
                         child: DropdownButtonFormField(
                       decoration: InputDecoration(
                         hintText: 'Type',
-                        hintStyle: TextStyle(color: third),
+                        hintStyle: const TextStyle(color: third),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(13)),
                       ),
@@ -192,12 +192,12 @@ class _IncidentState extends State<Incident> {
                     ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
                   children: [
-                    Text('Incident : ',
+                    const Text('Incident : ',
                         style: TextStyle(
                             color: primary,
                             fontSize: 15,
@@ -207,14 +207,14 @@ class _IncidentState extends State<Incident> {
                       maxLines: null,
                       decoration: InputDecoration(
                         hintText: '  Describe the incident...',
-                        hintStyle: TextStyle(color: third),
+                        hintStyle: const TextStyle(color: third),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(13)),
                       ),
                     ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 GestureDetector(
@@ -229,7 +229,7 @@ class _IncidentState extends State<Incident> {
                     decoration: BoxDecoration(
                         color: third, borderRadius: BorderRadius.circular(23)),
                     child: file == null
-                        ? Icon(Icons.camera_alt_outlined)
+                        ? const Icon(Icons.camera_alt_outlined)
                         : ClipRRect(
                             borderRadius: BorderRadius.circular(23),
                             child: Image.file(
@@ -239,19 +239,19 @@ class _IncidentState extends State<Incident> {
                           ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
                     style: ButtonStyle(
                         shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14))),
-                        iconColor: WidgetStatePropertyAll(Colors.grey),
+                        iconColor: const WidgetStatePropertyAll(Colors.grey),
                         fixedSize: WidgetStatePropertyAll(
                             Size(MediaQuery.of(context).size.width / 1.3, 40)),
-                        backgroundColor: WidgetStatePropertyAll(primary)),
+                        backgroundColor: const WidgetStatePropertyAll(primary)),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Submit',
                       style: TextStyle(color: Colors.white),
                     ))

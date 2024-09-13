@@ -14,6 +14,7 @@ class _LeaveState extends State<Leave> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
           // backgroundColor: primary,
           // leading: Padding(
           //   padding: const EdgeInsets.only(left: 7),
@@ -57,12 +58,12 @@ class _LeaveState extends State<Leave> {
                 ),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'ANNUAL LEAVES',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: primary),
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text('TOTAL LEAVES :',
                             style: TextStyle(
@@ -70,7 +71,7 @@ class _LeaveState extends State<Leave> {
                                 color: Colors.blue))
                       ],
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text('LEAVES TAKEN :',
                             style: TextStyle(
@@ -111,26 +112,26 @@ class _LeaveState extends State<Leave> {
                 ),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'REMAINING LEAVES',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: primary),
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text('Medical Leaves:',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: second))
                       ],
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text('Casual Leaves:',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: primary))
                       ],
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text('Unpaid:',
                             style: TextStyle(
@@ -165,18 +166,18 @@ class _LeaveState extends State<Leave> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
-                style: ButtonStyle(
+                style: const ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll(
-                        const Color.fromARGB(255, 119, 133, 212))),
+                        Color.fromARGB(255, 119, 133, 212))),
                 onPressed: () {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => Leaveform()));
                 },
-                child: Text(
+                child: const Text(
                   'APPLY FOR LEAVE',
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),

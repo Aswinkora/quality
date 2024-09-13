@@ -169,7 +169,7 @@ class _EditProfileState extends State<EditProfile> {
                   maxLines: 4,
                   decoration: InputDecoration(
                       labelText: "About",
-                      labelStyle: TextStyle(color: second),
+                      labelStyle: const TextStyle(color: second),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20))),
                 ),

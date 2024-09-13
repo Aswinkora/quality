@@ -17,6 +17,7 @@ class _ResetpasswordState extends State<Resetpassword> {
     _nameController.text = "User name";
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -49,24 +50,24 @@ class _ResetpasswordState extends State<Resetpassword> {
                 height: 300,
                 ),
             ),
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
             Padding(
               padding: const EdgeInsets.only(left: 40,right: 40),
               child: TextField(
                 controller: _nameController,
                 decoration: InputDecoration(
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.person,
                       color: second,
                     ),
                     labelText: "User name",
-                    labelStyle: TextStyle(color: second),
+                    labelStyle: const TextStyle(color: second),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                     )),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Padding(
@@ -74,22 +75,22 @@ class _ResetpasswordState extends State<Resetpassword> {
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    suffixIcon: Icon(
+                    suffixIcon: const Icon(
                       Icons.visibility,
                       color: second,
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.password,
                       color: second,
                     ),
                     labelText: "Password",
-                    labelStyle: TextStyle(color: second),
+                    labelStyle: const TextStyle(color: second),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                     )),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
              Padding(
@@ -97,31 +98,31 @@ class _ResetpasswordState extends State<Resetpassword> {
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    suffixIcon: Icon(
+                    suffixIcon: const Icon(
                       Icons.visibility,
                       color: second,
                     ),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.password,
                       color: second,
                     ),
                     labelText: " Confirm Password",
-                    labelStyle: TextStyle(color: second),
+                    labelStyle: const TextStyle(color: second),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                     )),
               ),
-            ),SizedBox(height: 25,),
-            Container(
+            ),const SizedBox(height: 25,),
+            SizedBox(
               height: 45,
               width: MediaQuery.sizeOf(context).width/1.6,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Save Changes",style: TextStyle(color: third,fontSize: 16,fontWeight: FontWeight.bold),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primary,
                   // textStyle: TextStyle(color: Colors.white)
                 ),
+                child: const Text("Save Changes",style: TextStyle(color: third,fontSize: 16,fontWeight: FontWeight.bold),),
               ),
             )
           ],

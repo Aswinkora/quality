@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:quality/const/colors.dart';
+import 'package:quality/screens/login.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -11,41 +13,41 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Employee Self ',
-                        style: TextStyle(
-                            color: primary,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900),
-                      ),
-                      Text(
-                        'Service',
-                        style: TextStyle(
-                            color: second,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900),
-                      )
-                    ],
-                  ),
-                ],
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Lottie.asset("images/splash.json",height: 350,width: 350),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Employee Self ',
+                      style: TextStyle(
+                          color: primary,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900),
+                    ),
+                    Text(
+                      'Service',
+                      style: TextStyle(
+                          color: second,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900),
+                    )
+                  ],
+                ),
+              ],
             ),
+           
             SizedBox(
               height: MediaQuery.of(context).size.height / 3,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
