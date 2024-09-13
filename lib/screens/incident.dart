@@ -14,8 +14,8 @@ class Incident extends StatefulWidget {
 }
 
 class _IncidentState extends State<Incident> {
-  final TextEditingController _dateController = TextEditingController();
-  final TextEditingController _timeController = TextEditingController();
+  TextEditingController _dateController = TextEditingController();
+  TextEditingController _timeController = TextEditingController();
   final List<String> type = [];
   XFile? file;
   final picker = ImagePicker();
@@ -72,7 +72,7 @@ class _IncidentState extends State<Incident> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
+        title: Center(
           child: Text('INCIDENT ',
               style: TextStyle(
                   color: primary, fontSize: 30, fontWeight: FontWeight.w900)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quality/screens/login.dart';
 import 'package:quality/screens/splashscreen.dart';
 
 void main() {

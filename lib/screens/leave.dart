@@ -14,6 +14,7 @@ class _LeaveState extends State<Leave> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
           // backgroundColor: primary,
           // leading: Padding(
           //   padding: const EdgeInsets.only(left: 7),

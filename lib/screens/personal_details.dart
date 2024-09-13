@@ -9,23 +9,23 @@ class PersonalDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primary,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Image.asset("images/midas_logo.png"),
-          ),
-        ),
-        title: const Text(
-          "Personal Details",
-          style: TextStyle(
-            color: third,
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
+      appBar: AppBar(automaticallyImplyLeading: false,
+        // backgroundColor: primary,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: CircleAvatar(
+        //     backgroundColor: Colors.white,
+        //     child: Image.asset("images/midas_logo.png"),
+        //   ),
+        // ),
+        // title: const Text(
+        //   "Personal Details",
+        //   style: TextStyle(
+        //     color: third,
+        //     fontWeight: FontWeight.bold,
+        //     fontSize: 22,
+        //   ),
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -79,7 +79,6 @@ class PersonalDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            // Contact Details section
             _buildInfoSection(
               context,
               title: "Contact Details",
@@ -96,7 +95,6 @@ class PersonalDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            // About section
             _buildInfoSection(
               context,
               title: "About",

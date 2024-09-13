@@ -13,32 +13,33 @@ class _DutyState extends State<Duty> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primary,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Image.asset("images/midas_logo.png"),
-          ),
-        ),
-        title: const Text(
-          "Duty",
-          style: TextStyle(
-            color: third,
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 28,
-            ),
-          )
-        ],
+        automaticallyImplyLeading: false,
+        // backgroundColor: primary,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: CircleAvatar(
+        //     backgroundColor: Colors.white,
+        //     child: Image.asset("images/midas_logo.png"),
+        //   ),
+        // ),
+        // title: const Text(
+        //   "Duty",
+        //   style: TextStyle(
+        //     color: third,
+        //     fontWeight: FontWeight.bold,
+        //     fontSize: 22,
+        //   ),
+        // ),
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {},
+        //     icon: const Icon(
+        //       Icons.person,
+        //       color: Colors.white,
+        //       size: 28,
+        //     ),
+        //   )
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 70),
