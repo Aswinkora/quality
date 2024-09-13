@@ -37,7 +37,7 @@ class _DashState extends State<Dash> {
           IconButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Profile()));
+                  context, MaterialPageRoute(builder: (context) => const Profile()));
             },
             icon: const Icon(
               Icons.person,
@@ -109,7 +109,7 @@ class _DashState extends State<Dash> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 27),
               child: Column(
@@ -120,20 +120,20 @@ class _DashState extends State<Dash> {
                       GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Duty()));
+                                builder: (context) => const Duty()));
                           },
                           child: _buildDashboardCard(
                               'Duty', Icons.work_outline, primary)),
                       GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Leave()));
+                                builder: (context) => const Leave()));
                           },
                           child: _buildDashboardCard(
                               'Leave', Icons.beach_access, primary)),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -142,7 +142,7 @@ class _DashState extends State<Dash> {
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Incident()));
+                              builder: (context) => const Incident()));
                         },
                         child: _buildDashboardCard(
                             'Incidence', Icons.warning_amber_rounded, primary),
@@ -178,7 +178,7 @@ class _DashState extends State<Dash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 35, color: second),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               title,
               style: const TextStyle(

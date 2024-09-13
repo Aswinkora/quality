@@ -104,12 +104,12 @@ class _ProfileState extends State<Profile> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PersonalDetails()));
+                                builder: (context) => const PersonalDetails()));
                       },
                       child: _buildDutyCard(
                           'Personal Details', Icons.person, primary)),
                   GestureDetector(onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfile()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfile()));
                   },child: _buildDutyCard('Edit Option', Icons.edit, primary)),
                 ],
               ),
@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Resetpassword()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Resetpassword()));
                   },child: _buildDutyCard('Reset Password', Icons.lock, primary)),
                   GestureDetector(onTap: () {
                     _showLogoutDialog(context);
@@ -194,7 +194,7 @@ class _ProfileState extends State<Profile> {
             ElevatedButton(
               onPressed: () {
                 
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserLogin()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const UserLogin()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: primary,

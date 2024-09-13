@@ -17,7 +17,7 @@ class _SplashscreenState extends State<Splashscreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
@@ -45,7 +45,7 @@ class _SplashscreenState extends State<Splashscreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height / 3,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(

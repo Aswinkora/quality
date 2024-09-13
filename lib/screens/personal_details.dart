@@ -40,16 +40,16 @@ class PersonalDetails extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   color: primary,
                 ),
-                child: Row(
+                child: const Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 50,
                       backgroundImage: AssetImage('images/user.png'),
                     ),
-                    const SizedBox(width: 20),
+                    SizedBox(width: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Hello,',
                           style: TextStyle(

@@ -128,7 +128,7 @@ class _UserLoginState extends State<UserLogin> {
       appBar: AppBar(
         backgroundColor: Colors.white,
       ),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
@@ -138,7 +138,7 @@ class _UserLoginState extends State<UserLogin> {
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   'Login',
                   style: TextStyle(
                       color: primary,
@@ -146,31 +146,31 @@ class _UserLoginState extends State<UserLogin> {
                       fontSize: 30),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
                             suffixIconColor: second,
-                            suffixIcon: Icon(Icons.person_outline_rounded),
+                            suffixIcon: const Icon(Icons.person_outline_rounded),
                             labelText: 'Username',
-                            labelStyle: TextStyle(color: second),
+                            labelStyle: const TextStyle(color: second),
                             hintText: 'Username',
-                            hintStyle: TextStyle(color: third),
+                            hintStyle: const TextStyle(color: third),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(23))),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             suffixIconColor: second,
-                            suffixIcon: Icon(Icons.lock_outline),
+                            suffixIcon: const Icon(Icons.lock_outline),
                             hintText: 'Password',
-                            hintStyle: TextStyle(color: third),
+                            hintStyle: const TextStyle(color: third),
                             labelText: 'Password',
-                            labelStyle: TextStyle(color: second),
+                            labelStyle: const TextStyle(color: second),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(23))),
                       ),
@@ -181,15 +181,15 @@ class _UserLoginState extends State<UserLogin> {
                     style: ButtonStyle(
                         shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14))),
-                        iconColor: WidgetStatePropertyAll(Colors.grey),
+                        iconColor: const WidgetStatePropertyAll(Colors.grey),
                         fixedSize: WidgetStatePropertyAll(
                             Size(MediaQuery.of(context).size.width / 1.3, 40)),
-                        backgroundColor: WidgetStatePropertyAll(primary)),
+                        backgroundColor: const WidgetStatePropertyAll(primary)),
                     onPressed: () {
                       Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Dash()));
+                          MaterialPageRoute(builder: (context) => const Dash()));
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -201,7 +201,7 @@ class _UserLoginState extends State<UserLogin> {
                     )),
                 Container(
                   height: 300,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/login.png"),
                         fit: BoxFit.cover),
